@@ -5,14 +5,14 @@ public class Zadania {
 
     private int id;
     private String title;
-    private String deadline;
+    private boolean zakonczone;
     private Status status;
 
-    public Zadania(String title, String deadline, Status status) {
+    public Zadania(String title, Status status) {
         this.id = nextId++;
         this.title = title;
-        this.deadline = deadline;
         this.status = status;
+        this.zakonczone = false;
     }
 
     public int getId(){
@@ -23,8 +23,8 @@ public class Zadania {
         return title;
     }
 
-    public String getDeadline() {
-        return deadline;
+    public boolean getZakonczone() {
+        return zakonczone;
     }
 
     public Status getStatus() {
@@ -39,8 +39,8 @@ public class Zadania {
         this.title = title;
     }
 
-    public void setDeadline(String deadline) {
-        this.deadline = deadline;
+    public void setZakonczone(boolean zakonczone) {
+        this.zakonczone = zakonczone;
     }
 
     public boolean isCompleted() {

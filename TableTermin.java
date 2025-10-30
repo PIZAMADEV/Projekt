@@ -1,14 +1,14 @@
-import java.util.*;
+import java.util.List;
 
-public class Table {
-    public static void printTable(List<Zadania> tasks) {
+public class TableTermin extends Table{
+    public static void printTableTermin(List<ZadaniaTerminowe> tasks_ter) {
         String line = "---------------------------------------------";
         System.out.println(line);
         System.out.printf("| %-3s |%-25s | %-12s | %-12s |\n",
-                "ID","TITLE", "STATUS", "FINISH");
+                "ID","TITLE", "STATUS", "DEADLINE");
         System.out.println(line);
 
-        for (Zadania t : tasks) {
+        for (ZadaniaTerminowe t : tasks_ter) {
             String statusColored;
 
             if (t.getStatus().isCompleted()) {
@@ -25,7 +25,7 @@ public class Table {
                     t.getId(),
                     t.getTitle(),
                     statusColored,
-                    t.getZakonczone());
+                    t.getDeadline());
         }
 
         System.out.println(line);
